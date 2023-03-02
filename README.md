@@ -1,60 +1,60 @@
-# Data Science: Sample Group Project Structure
+<div align="center">
 
-## Key Takeaways
+  <h1 align="center">Computing Vision's Quest for Greatness</h3>
 
-1. All individual work should be done within your personal "group member" folder.
-2. All individual work should be done on your personal "group member" git branch.
-3. Communication is key! Working on the same jupyter notebook at the same time will likely result in a merge conflict.
-4. Don't Panic! A merge conflict is not the end of the world - let an instructor or coach know, and we will help you fix things up.
+  <p align="center">
+    <h3 align='center'>Recommendations on how to create profitable content
+    <br />
+    <a href="#overview">Overview</a>
+    .
+    <a href="#business-understanding">Business Understanding</a>
+    .
+    <a href="#data-understanding-and-analysis">Data Understanding and Analysis</a>
+    .
+    <a href="#statistical-communication">Statistical Communication</a>
+    .
+    <a href="#conclusion">Conclusion</a>
+  </p>
+</div>
 
-## Directory Structure
 
-For this project we suggest the following directory structure:
+## Overview
+For this project, you will use exploratory data analysis and statistical methods to generate insights for a business stakeholder.
 
-```
-project-folder
-    ├── data-folder
-    ├── images-folder
-    ├── notebooks-folder
-    |   |
-    |   ├── group-member-1-notebooks-folder
-    |   |   |
-    |   |   └──group-member-1-working-notebook.ipynb
-    |   |
-    |   ├── group-member-2-notebooks-folder
-    |   |   |
-    |   |   └──group-member-2-working-notebook.ipynb
-    |   |
-    |   └── group-member-3-notebooks-folder
-    |       |
-    |       └──group-member-3-working-notebook.ipynb
-    |
-    ├── README.md
-    ├── report-notebook.ipynb
-    └── presentation.pdf
-```
+## Business Understanding
+A group of analysts were tasked with generating recommendations for Computing Vision (the stakeholder) which is a company that is looking to move into the content creation business. Different sources of data and different analysis techniques were used in generating these recommendations and with the use of these suggestions, Computing Vision should be able to produce content and films that have significant profit margins. 
 
-The goal here is that you are working only in your own folder. Never add/commit files that are in another member's folder!
+## Data Understanding and Analysis
+A myriad of different sources of data were used in the generation of the recommendations for the client. These sources include:
+* IMDB
+* The Movie Database
+* Rotten Tomatoes
+* Box Office Mojo
+* The Numbers
+<!-- end of list-->
+Combining tables from each of the different sources, we were able to aggregate data that showed us key insights into what variables the client could manipulate in order to generate the most profitable movies. The analysis team would recommend the following in order for Computing Vision to make the most profit:
+### Release Month
+Based on the data below you can see that the summer months (May, June, and July) are the most profitable months to release a movie in.
+![](images/release_month.PNG)
 
-## Git/GitHub Workflow
+### Director
+There is a statistically significant disparity between the top 10 directors and the population of directors in the database.
+![](images/director.PNG)
 
-For this project, we suggest the following Git/GitHub workflow (a branching workflow):
+### Writer
+The 10 writers in our sample show a much higher average net profit as compared to the other writers in the population.
+![](images/writer.PNG)
 
-![branching structure diagram](images/git-branches-diagram.png)
 
-The goal here is that you're working on your own branch. We recommend naming each branch after the group member.
+## Statistical Communication
+In order to prove the validity of the conclusions we came to while exploring the data, we used statistical inferencing techniques such as the ANOVA test (Analysis of Variance) and the t-test. The ANOVA test describes the differences in sample mean across a categorical variable as compared to the population mean while the t-test describes the difference between an independent sample of the data and the population mean.
 
-The workflow should look like the following:
+### Release Month
+For the release month data that we aggregated, we performed the ANOVA test and it showed a p-value of 5e-50. This means that with an incredibly high confidence rate that there is a different between the average value of one of the categories and the population. Further analysis with a t-test determined that the month of May has a significantly different mean than the population, proving that it is a valid conclusion to release films in the month of May.
 
-1. Pull the most recent updates from the remote `main` branch: `git pull origin main`
-2. Move to your working branch locally: `git checkout <name of member branch>`
-3. Merge the main branch onto your working branch: `git merge main`
-4. Do the work! Make changes and edits to your project content!
-5. Add and commit changes to your branch: `git add <file name>` then `git commit -m 'Meaningful message describing changes to be committed'`
-6. Push changes to your remote working branch: `git push origin <name of member branch>`
-7. Start a Pull Request on GitHub to sync changes on the working branch with the remote `main` branch
-8. Repeat as necessary!
+### Director and Writer
+For the Director and Writer metrics, we were able to take a sample of the population (the top 10 directors/writers by average net profit) and compare the sample to the population. The t-test provided a p-value that concludes the sample mean is significantly higher than the population mean with at least 95% confidence.
 
-Steps 1, 3, 6 and 7 are represented on the arrows below:
 
-![process diagram](images/git-process-diagram.png)
+## Conclusion
+The problem that the team was presented with was discovering what factors the studio team could manipulate in order to maximize profits. Based on the results from our statistical inferences, we are able to conclude that the three variables `Release Month`, `Director`, and `Writer` are essential to ensuring box office success with concrete evidence. 
